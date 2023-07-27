@@ -1,8 +1,24 @@
 // index.js
 const express = require('express');
-
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 const app = express();
+app.use(express.json());
 const PORT = 4000;
+dotenv.config();
+
+const MONGO_URL = process.env.DATABASE_URI;
+const MONGO_PASSWORD = process.env.DATABASE_PASSWORD;
+
+// connect with mongodb
+const DB = MONGO_URL.replace("<password>", MONGO_PASSWORD);
+
+mongoose.connect(DB)
+  .then(() => {
+    console.log("Connction successful with DB");
+  }).catch((err) => {
+    console.log("Something went wrong in connection");
+  });
 
 app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT} `);
