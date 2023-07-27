@@ -1,14 +1,13 @@
 // index.js
 const express = require('express');
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const { MONGOURI, MONGOPASSWORD } = require('./keys');
 const app = express();
 app.use(express.json());
 const PORT = 4000;
-dotenv.config();
 
-const MONGO_URL = process.env.DATABASE_URI;
-const MONGO_PASSWORD = process.env.DATABASE_PASSWORD;
+const MONGO_URL = MONGOURI;
+const MONGO_PASSWORD = MONGOPASSWORD;
 
 // connect with mongodb
 const DB = MONGO_URL.replace("<password>", MONGO_PASSWORD);
