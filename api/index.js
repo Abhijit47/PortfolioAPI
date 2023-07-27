@@ -1,7 +1,7 @@
 // index.js
 const express = require('express');
 const mongoose = require('mongoose');
-const { MONGOURI, MONGOPASSWORD } = require('./keys');
+const { MONGOURI, MONGOPASSWORD } = require('../keys');
 const app = express();
 app.use(express.json());
 const PORT = 4000;
