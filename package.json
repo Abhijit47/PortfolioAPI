@@ -2,7 +2,7 @@
   "name": "portfolioapi",
   "version": "1.0.0",
   "description": "This is my personal portfolio API.",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
     "start": "nodemon index.js"
   },
