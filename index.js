@@ -14,19 +14,19 @@ app.use(cors());
 // dotenv.config({ path: './config.env' });
 
 // static variable
-const MONGO_URL = process.env.DATABASE_URI;
-const MONGO_PASSWORD = process.env.DATABASE_PASSWORD;
+// const MONGO_URL = process.env.DATABASE_URI;
+// const MONGO_PASSWORD = process.env.DATABASE_PASSWORD;
 const PORT = process.env.PORT || 5000;
 
 // connect with mongodb
-const DB = MONGO_URL.replace("<password>", MONGO_PASSWORD);
+// const DB = MONGO_URL.replace("<password>", MONGO_PASSWORD);
 
-mongoose.connect(DB)
-  .then(() => {
-    console.log("Connction successful with DB");
-  }).catch((err) => {
-    console.log("Something went wrong in connection");
-  });
+// mongoose.connect(DB)
+//   .then(() => {
+//     console.log("Connction successful with DB");
+//   }).catch((err) => {
+//     console.log("Something went wrong in connection");
+//   });
 
 
 // Create GET request
