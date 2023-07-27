@@ -30,7 +30,7 @@ mongoose.connect(DB)
 
 
 // Create GET request
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   res.status(200).json({ message: "Express app on vercel." });
