@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cors = require('cors');
+dotenv.config();
 
 // Initialize Express
 const app = express();
@@ -10,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // configure dotenv
-dotenv.config({ path: './config.env' });
+// dotenv.config({ path: './config.env' });
 
 // static variable
 const MONGO_URL = process.env.DATABASE_URI;
@@ -30,6 +31,8 @@ mongoose.connect(DB)
 
 // Create GET request
 app.get("/", (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   res.status(200).json({ message: "Express app on vercel." });
 });
 
